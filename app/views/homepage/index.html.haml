@@ -1,0 +1,12 @@
+= form_tag login_path do
+
+  = label :usuario, :nick, 'Nick Usuario'
+  = text_field :cliente, 'Nick'
+
+  = label :usuario, :password, 'Password'
+  = text_field :cliente,'Password'
+
+
+  = submit_tag 'Login'
+
+=link_to 'Registrarse', registro_path
