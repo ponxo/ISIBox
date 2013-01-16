@@ -1,0 +1,3 @@
+class IsiboxController < ApplicationController
+
+end
