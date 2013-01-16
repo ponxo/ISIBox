@@ -4,7 +4,7 @@ class CreateFicheroGestionados < ActiveRecord::Migration
       t.string :filename
       t.string :content_type
       t.binary :data
-      t.refences :usuario
+      t.references :usuario
 
       t.timestamps
     end
