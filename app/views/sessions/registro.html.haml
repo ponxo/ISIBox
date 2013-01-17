@@ -1,4 +1,4 @@
-= form_tag login_path do
+= form_tag registro_crear_path do
 
   = label :usuario, :nick, 'Nick Usuario'
   = text_field :usuario, 'nick'
@@ -7,6 +7,7 @@
   = text_field :usuario,'password'
 
 
-  = submit_tag 'Login'
+  = submit_tag 'Registrarse'
 
-=link_to 'Registrarse', registro_path
+=form_tag homepage_path do
+  =submit_tag 'Cancelar'

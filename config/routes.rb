@@ -1,6 +1,7 @@
 ISIBox::Application.routes.draw do
   resources :isibox
   match '/registro' => 'sessions#registro'
+  match '/registro/crear' => 'sessions#create'
   match '/homepage' => 'homepage#index'
   match '/logout' => 'sessions#destroy'
   match '/login' => 'sessions#login'
