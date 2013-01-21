@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130116143359) do
+ActiveRecord::Schema.define(:version => 20130121175122) do
 
   create_table "fichero_gestionados", :force => true do |t|
     t.string   "filename"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20130116143359) do
     t.integer  "usuario_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "file"
   end
 
   create_table "usuarios", :force => true do |t|
