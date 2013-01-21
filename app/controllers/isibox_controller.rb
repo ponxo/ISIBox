@@ -4,6 +4,7 @@ class IsiboxController < ApplicationController
   end
 
   def create
+    redirect_to isibox_index_path
   end
 
   def new
