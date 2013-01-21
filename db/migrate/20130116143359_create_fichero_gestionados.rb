@@ -3,7 +3,7 @@ class CreateFicheroGestionados < ActiveRecord::Migration
     create_table :fichero_gestionados do |t|
       t.string :filename
       t.string :content_type
-      t.binary :data
+      t.string :path
       t.references :usuario
 
       t.timestamps

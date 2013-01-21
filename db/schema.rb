@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20130116143359) do
   create_table "fichero_gestionados", :force => true do |t|
     t.string   "filename"
     t.string   "content_type"
-    t.binary   "data"
+    t.string   "path"
     t.integer  "usuario_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
