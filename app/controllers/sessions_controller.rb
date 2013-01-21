@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     @user=Usuario.find_by_nick(@nick)
     if @user then
       if @user.password == @password then
-        session[:usuario]=@user
+        session[:usuario]=@user.nick
         redirect_to isibox_index_path
       else
         flash[:warning]="Fallo de autenticacion"

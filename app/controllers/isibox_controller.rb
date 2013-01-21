@@ -1,5 +1,7 @@
 class IsiboxController < ApplicationController
   def index
+    @usuario=session[:usuario]
+    puts @usuario
   end
 
   def create
