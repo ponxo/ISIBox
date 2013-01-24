@@ -4,6 +4,10 @@ class IsiboxController < ApplicationController
   end
 
   def create
+    @usuario=Usuario.find_by_nick(session[:usuario])
+    puts params[:fichero]
+    @usuario.fichero_gestionados.build(params[:fichero])
+    @usuario.save
     redirect_to isibox_index_path
   end
 
