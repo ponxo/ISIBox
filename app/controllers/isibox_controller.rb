@@ -7,8 +7,12 @@ class IsiboxController < ApplicationController
     @usuario=Usuario.find_by_nick(session[:usuario])
     puts params[:fichero]
     @usuario.fichero_gestionados.build(params[:fichero])
-    @usuario.save
-    redirect_to isibox_index_path
+    if @usuario.save then
+      redirect_to isibox_index_path
+    else
+      flash[:warning]="Fallo al subir el archivo"
+      return
+    end
   end
 
   def new
