@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
   def create
     @usuario=Usuario.create(params[:usuario])
     if @usuario then
-      session[:usuario]=@usuario
+      session[:usuario]=@usuario.nick
       redirect_to isibox_index_path
     else
       flash[:warning]="Fallo en el registro"
