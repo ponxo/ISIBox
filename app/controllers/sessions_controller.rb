@@ -34,4 +34,15 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    if session.delete(:usuario) then
+      flash[:notice]="Log Out correctamente"
+      redirect_to homepage_path
+    else
+      flash[:warning]="Fallo del log out, vuelva a intentarlo"
+      return
+    end
+
+  end
+
 end
