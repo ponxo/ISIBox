@@ -6,7 +6,10 @@ class IsiboxController < ApplicationController
   def create
     @usuario=Usuario.find_by_nick(session[:usuario])
     puts params[:fichero]
+    @file=params[:fichero][:file]
+    @name_original=@file.original_filename
     @usuario.fichero_gestionados.build(params[:fichero])
+    @usuario.fichero_gestionados.build(:filename => "#{@name_original}")
     if @usuario.save then
       redirect_to isibox_index_path
     else

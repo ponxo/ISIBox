@@ -19,13 +19,18 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @usuario=Usuario.create(params[:usuario])
-    if @usuario then
-      session[:usuario]=@usuario.nick
-      redirect_to isibox_index_path
+    if params[:usuario][:password]==params[:repeticion][:password_2] then
+      @usuario=Usuario.create(params[:usuario])
+      if @usuario then
+        session[:usuario]=@usuario.nick
+        redirect_to isibox_index_path
+      else
+        flash[:warning]="Fallo en el registro"
+        redirect_to registro_path
+      end
     else
-      flash[:warning]="Fallo en el registro"
-      redirect_to registro_path
+      flash[:warning]="Fallo en el registro, introduce el mismo password"
+      redirect_to registro_path 
     end
   end
 

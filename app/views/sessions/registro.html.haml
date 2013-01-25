@@ -4,7 +4,10 @@
   = text_field :usuario, 'nick'
 
   = label :usuario, :password, 'Password'
-  = text_field :usuario,'password'
+  = password_field :usuario,'password'
+
+  = label :repeticion, :password_2 ,'Repite el password'
+  = password_field :repeticion, 'password_2'
 
 
   = submit_tag 'Registrarse'
