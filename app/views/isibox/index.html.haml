@@ -14,7 +14,7 @@ Bienvenido #{@usuario.nick}
         %td= index
         %td= file.name 
         %td= file.content_type
-        %td= link_to "Descargar Fichero", "uploads/fichero_gestionado/file/#{file.id}"
+        %td= link_to "Descargar Fichero", "download/#{file.id}"
 
 =link_to 'Subir Fichero', new_isibox_path
 

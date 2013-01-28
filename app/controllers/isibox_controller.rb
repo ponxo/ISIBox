@@ -2,8 +2,6 @@ class IsiboxController < ApplicationController
   def index
     @usuario=Usuario.find_by_nick(session[:usuario])
     @files=@usuario.fichero_gestionados
-    puts 'Voy a poner la cantidad de ficheros aqui que tiene subidos cada uno'
-    puts @files.length
     
   end
 
@@ -32,5 +30,11 @@ class IsiboxController < ApplicationController
   end
 
   def destroy
+  end
+
+  def download
+    @file=FicheroGestionado.find_by_id(params[:id])
+    puts @file.file
+    send_file "public/#{@file.file}"
   end
 end
