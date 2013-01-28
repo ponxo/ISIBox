@@ -14,7 +14,6 @@
 ActiveRecord::Schema.define(:version => 20130121175122) do
 
   create_table "fichero_gestionados", :force => true do |t|
-    t.string   "filename"
     t.string   "name"
     t.string   "content_type"
     t.integer  "usuario_id"

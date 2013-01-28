@@ -1,7 +1,7 @@
 = form_tag isibox_index_path, :multipart => true do
 
   = label :fichero, :name, 'Nombre Fichero'
-  = text_field :fichero, 'filename'
+  = text_field :fichero, 'name'
 
   = label :fichero, :content_type, 'Contenido'
   = select :fichero, :content_type, ['Audio', 'Imagen', 'Texto','Video']

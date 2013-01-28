@@ -1,16 +1,17 @@
 class IsiboxController < ApplicationController
   def index
-    @usuario=session[:usuario]
+    @usuario=Usuario.find_by_nick(session[:usuario])
+    @files=@usuario.fichero_gestionados
+    puts 'Voy a poner la cantidad de ficheros aqui que tiene subidos cada uno'
+    puts @files.length
+    
   end
 
   def create
     @usuario=Usuario.find_by_nick(session[:usuario])
-    puts params[:fichero]
-    @file=params[:fichero][:file]
-    @name_original=@file.original_filename
     @usuario.fichero_gestionados.build(params[:fichero])
-    @usuario.fichero_gestionados.build(:filename => "#{@name_original}")
     if @usuario.save then
+      flash[:notice]="Archivo subido satisfactoriamente"
       redirect_to isibox_index_path
     else
       flash[:warning]="Fallo al subir el archivo"

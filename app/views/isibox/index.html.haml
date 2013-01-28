@@ -1,4 +1,20 @@
-Bienvenido #{@usuario}
+Bienvenido #{@usuario.nick}
+
+
+%table#files
+  %thead
+    %tr
+      %th Index
+      %th Nombre Fichero
+      %th Tipo
+  %tbody
+    - @files.each_with_index do |file,index|
+      %tr
+        - index= index + 1
+        %td= index
+        %td= file.name 
+        %td= file.content_type
+        %td= link_to "Descargar Fichero", "uploads/fichero_gestionado/file/#{file.id}"
 
 =link_to 'Subir Fichero', new_isibox_path
 
