@@ -30,11 +30,19 @@ class IsiboxController < ApplicationController
   end
 
   def destroy
+    @file=FicheroGestionado.find_by_id(params[:id])
+    if @file.destroy then
+      Dir.rmdir("public/uploads/fichero_gestionado/file/#{@file.id}")
+      flash[:notice]="Archivo Eliminado"
+    else
+      flash[:warning]="No se pudo eliminar el archivo, vuelva a intentarlo"
+    end
+    redirect_to isibox_index_path
+
   end
 
   def download
     @file=FicheroGestionado.find_by_id(params[:id])
-    puts @file.file
     send_file "public/#{@file.file}"
   end
 end
