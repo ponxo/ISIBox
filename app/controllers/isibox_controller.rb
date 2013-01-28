@@ -24,6 +24,20 @@ class IsiboxController < ApplicationController
   end
 
   def show
+    @file=FicheroGestionado.find_by_id(params[:id])
+    @type=@file.content_type
+    if @type=='Audio'
+      render :template => 'isibox/audio.html.haml'
+    elsif @type=='Imagen'
+      render :template => 'isibox/imagen.html.haml'
+    elsif @type=='Video'
+      render :template => 'isibox/video.html.haml'
+    elsif @type=='Texto'
+      puts @type
+    else
+      flash[:warning]="No se puede reproducir el archivo online"
+      redirect_to isibox_index_path
+    end
   end
 
   def update

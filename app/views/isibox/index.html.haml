@@ -14,6 +14,7 @@ Bienvenido #{@usuario.nick}
         %td= index
         %td= file.name 
         %td= file.content_type
+        %td= link_to "Abrir Online", isibox_path(file.id), :method => :get
         %td= link_to "Descargar Fichero", "download/#{file.id}"
         %td= button_to 'Delete', isibox_path(file.id), :method => :delete, :confirm => '¿Estás seguro de eliminar el fichero?'
 
