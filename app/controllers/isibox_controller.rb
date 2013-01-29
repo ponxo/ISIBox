@@ -26,6 +26,7 @@ class IsiboxController < ApplicationController
   def show
     @file=FicheroGestionado.find_by_id(params[:id])
     @type=@file.content_type
+    puts Rails.root.to_s
     if @type=='Audio'
       render :template => 'isibox/audio.html.haml'
     elsif @type=='Imagen'
@@ -35,7 +36,8 @@ class IsiboxController < ApplicationController
     elsif @type=='Txt'
       send_file "#{@file.file}", :type => 'text/plain', :disposition => 'inline'
     elsif @type=='Pdf'
-      send_file "#{@file.file}", :type => 'application/pdf', :disposition => 'inline'
+      @path="#{Rails.root}"+"#{@file.file}"
+      send_file("#{Rails.root}/public/uploads/fichero_gestionado/file/13/EjerciciosTema5.pdf", :type => "application/pdf", :disposition => "inline")
     else
       flash[:warning]="No se puede reproducir el archivo online"
       redirect_to isibox_index_path
