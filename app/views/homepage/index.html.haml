@@ -1,12 +1,17 @@
-= form_tag login_path do
+%login
+  = form_tag login_path do
 
-  = label :usuario, :nick, 'Nick Usuario'
-  = text_field :usuario, 'nick'
+    = label :usuario, :nick, 'Nick Usuario'
+    = text_field :usuario, 'nick'
 
-  = label :usuario, :password, 'Password'
-  = password_field :usuario,'password'
+    = label :usuario, :password, 'Password'
+    = password_field :usuario,'password'
 
 
-  = submit_tag 'Login'
-
-=link_to 'Registrarse', registro_path
+    = submit_tag 'Login'
+%registro
+  =link_to 'Registrarse', registro_path
+%descripcion
+  TUS ARCHIVOS EN LA RED 
+%logo
+  =image_tag("LOGO.png")
