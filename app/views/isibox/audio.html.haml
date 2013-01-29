@@ -1,2 +1,12 @@
-Audio
-=audio_tag("#{@file.file}", :autodisplay => true, :controls => true)
+.cabecera
+  .icono 
+    =image_tag("icono.png")
+  %p ISIBox
+  #usuario
+    %p Sonando #{@file.name}
+
+#imagen
+  =image_tag("musica.png")
+
+#audio
+  =audio_tag("#{@file.file}", :autodisplay => true, :controls => true)

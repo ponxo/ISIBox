@@ -21,7 +21,7 @@ html, body {
   font-size: 10pt;
 }
 
-login {
+#login {
   display:block;
   float:right;
   color : yellow;
@@ -29,16 +29,87 @@ login {
   margin-right:1em;
 }
 
-registro {
+#registro {
   display:block;
   float:right;
   color:yellow;
   margin-right:1em;
 }
-logo{
+#logo{
   display: block;
   margin-left:300px;
   margin-top: 100px;
 }
+
+.cabecera{
+  width:100%;
+  height: 13em;
+  background-color:red;
+  border:2px solid black;
+}
+.cabecera p{
+  width: 25%;
+  float:left;
+  font-family:Verdana;
+  font-size: 5em;
+  margin-left:3em;
+}
+.cabecera .icono{
+  width:25%;
+  float:left;
+  margin-left:1em;
+}
+#reg{
+  clear:both;
+  
+}
+#reg p{
+  width:100%;
+  background-color:orange;
+}
+
+#formulario{
+  margin-top:3em;
+}
+
+.cabecera #usuario p{
+  width:10%;
+  height: 2em;
+  font-size:1em;
+  background-color:white;
+  float:right;
+  border:2px solid black;
+}
+
+table#files {
+  clear:both;
+  margin: 10px;
+  border-collapse: collapse;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+table#files th {
+  border: 2px solid white;
+  font-weight: bold;
+  background-color: wheat;
+  padding: 4px;
+  text-align:left;
+}
+
+table#files td:hover{
+  padding: 4px;
+  text-align: left;
+  background:yellow;
+}
+
+#notice, #warning {
+  clear:both;
+  background: yellow;
+  padding: 4px;
+}
+#imagen{
+  clear:both;
+}
+
 
   

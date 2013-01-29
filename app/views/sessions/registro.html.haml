@@ -1,16 +1,30 @@
-= form_tag registro_crear_path do
+.cabecera
+  .icono 
+    =image_tag("icono.png")
+  %p ISIBox
 
-  = label :usuario, :nick, 'Nick Usuario'
-  = text_field :usuario, 'nick'
+#reg
+  %p REGISTRO
 
-  = label :usuario, :password, 'Password'
-  = password_field :usuario,'password'
+- if flash[:notice]
+  #notice.message= flash[:notice]
+- elsif flash[:warning]
+  #warning.message= flash[:warning]
 
-  = label :repeticion, :password_2 ,'Repite el password'
-  = password_field :repeticion, 'password_2'
+#formulario
+  = form_tag registro_crear_path do
+
+    = label :usuario, :nick, 'Nick Usuario'
+    = text_field :usuario, 'nick'
+
+    = label :usuario, :password, 'Password'
+    = password_field :usuario,'password'
+
+    = label :repeticion, :password_2 ,'Repite el password'
+    = password_field :repeticion, 'password_2'
 
 
-  = submit_tag 'Registrarse'
+    = submit_tag 'Registrarse'
 
-=form_tag homepage_path do
-  =submit_tag 'Cancelar'
+  =form_tag homepage_path do
+    =submit_tag 'Cancelar'

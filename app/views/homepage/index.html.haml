@@ -1,4 +1,4 @@
-%login
+#login
   = form_tag login_path do
 
     = label :usuario, :nick, 'Nick Usuario'
@@ -11,7 +11,12 @@
     = submit_tag 'Login'
 -3.times do
   %br
-%registro
+#registro
   =link_to 'Registrarse', registro_path
-%logo
+
+- if flash[:notice]
+  #notice.message= flash[:notice]
+- elsif flash[:warning]
+  #warning.message= flash[:warning]
+#logo
   =image_tag("LOGO.png")

@@ -34,10 +34,11 @@ class IsiboxController < ApplicationController
     elsif @type=='Video'
       render :template => 'isibox/video.html.haml'
     elsif @type=='Txt'
-      send_file "#{@file.file}", :type => 'text/plain', :disposition => 'inline'
+      @path="#{Rails.root}"+"/public/"+"#{@file.file}"
+      send_file("#{@path}", :type => "text/plain", :disposition => "inline")
     elsif @type=='Pdf'
-      @path="#{Rails.root}"+"#{@file.file}"
-      send_file("#{Rails.root}/public/uploads/fichero_gestionado/file/13/EjerciciosTema5.pdf", :type => "application/pdf", :disposition => "inline")
+      @path="#{Rails.root}"+"/public/"+"#{@file.file}"
+      send_file("#{@path}", :type => "application/pdf", :disposition => "inline")
     else
       flash[:warning]="No se puede reproducir el archivo online"
       redirect_to isibox_index_path
