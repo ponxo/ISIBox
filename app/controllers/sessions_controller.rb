@@ -45,4 +45,24 @@ class SessionsController < ApplicationController
 
   end
 
+  def borrar
+    @usuario=Usuario.find_by_id(params[:id])
+    @files=@usuario.fichero_gestionados
+    @numeros=Array.new
+    @files.each do |file|
+      @numeros << "#{file.id}"
+    end
+    session.delete(:usuario)
+    if @usuario.destroy then
+      @numeros.each do |id|
+        Dir.rmdir("public/uploads/fichero_gestionado/file/#{id}")
+      end
+      flash[:notice]="Usuario eliminado"
+      redirect_to homepage_path
+    else
+      flash[:warning]="No se pudo eliminar el usuario. Vuelva a intentarlo"
+      redirect_to isibox_index_path
+    end
+  end
+
 end

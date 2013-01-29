@@ -5,6 +5,7 @@ ISIBox::Application.routes.draw do
   match '/homepage' => 'homepage#index'
   match '/logout' => 'sessions#destroy'
   match '/login' => 'sessions#login'
+  match '/delete/user/:id' => 'sessions#borrar'
   match 'download/:id' => 'isibox#download'
   root :to => 'homepage#index'
   # The priority is based upon order of creation:

@@ -22,3 +22,5 @@ Bienvenido #{@usuario.nick}
 
 
 =link_to 'Cerrar Sesion', logout_path
+%br
+=link_to 'Eliminar Cuenta', "delete/user/#{@usuario.id}", :confirm => '¿Seguro que quieres eliminar la cuenta?'
