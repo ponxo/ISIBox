@@ -109,7 +109,14 @@ table#files td:hover{
 }
 #imagen{
   clear:both;
+  margin-left:40%;
 }
-
-
+#audio{
+  clear:both;
+  margin-left:35%;
+}
+#bienvenida{
+  width: 20%;
+  margin-left:40%;
+}
   

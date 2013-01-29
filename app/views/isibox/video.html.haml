@@ -1,2 +1,8 @@
-Video
-=video_tag("#{@file.file}", :autodisplay => true, :controls => true)
+.cabecera
+  .icono 
+    =image_tag("icono.png")
+  %p ISIBox
+#video
+  =video_tag("#{@file.file}", :autodisplay => true, :controls => true)
+.return
+  =link_to= link_to "Volver página principal", isibox_index_path

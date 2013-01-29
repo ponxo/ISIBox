@@ -1,1 +1,10 @@
-=image_tag("#{@file.file}")
+.cabecera
+  .icono 
+    =image_tag("icono.png")
+  %p ISIBox
+
+#file 
+  =image_tag("#{@file.file}")
+
+.return
+  =link_to= link_to "Volver página principal", isibox_index_path
