@@ -87,13 +87,13 @@ table#files {
   border-bottom: 2px solid black;
 }
 table#files th {
-  border: 2px solid blue;
+  width:55%
   font-weight: bold;
   background-color:yellow ;
+  border: 2px solid blue;
   padding: 4px;
   text-align:left;
 }
-
 table#files td:hover{
   padding: 4px;
   text-align: left;
@@ -125,4 +125,13 @@ table#files td:hover{
 #upload{
   clear:both;
 }
+#arriba{
+  float:left;
+  margin-right:2em;
+}
+#abajo{
+  float:left;
+  margin-left:2em;
+}
+
   
