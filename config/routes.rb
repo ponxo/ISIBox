@@ -1,4 +1,5 @@
 ISIBox::Application.routes.draw do
+  root :to => 'homepage#index'
   resources :isibox
   match '/registro' => 'sessions#registro'
   match '/registro/crear' => 'sessions#create'
@@ -7,7 +8,7 @@ ISIBox::Application.routes.draw do
   match '/login' => 'sessions#login'
   match '/delete/user/:id' => 'sessions#borrar'
   match 'download/:id' => 'isibox#download'
-  root :to => 'homepage#index'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
