@@ -54,9 +54,9 @@ class SessionsController < ApplicationController
     end
     session.delete(:usuario)
     if @usuario.destroy then
-      @numeros.each do |id|
-        Dir.rmdir("#{Rail.root}"+"/public/uploads/fichero_gestionado/file/#{id}")
-      end
+      #@numeros.each do |id|
+        #Dir.rmdir("#{Rail.root}"+"/public/uploads/fichero_gestionado/file/#{id}")
+      #end
       flash[:notice]="Usuario eliminado"
       redirect_to homepage_path
     else

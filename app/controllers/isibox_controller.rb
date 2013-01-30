@@ -56,7 +56,7 @@ class IsiboxController < ApplicationController
   def destroy
     @file=FicheroGestionado.find_by_id(params[:id])
     if @file.destroy then
-      Dir.rmdir("public/uploads/fichero_gestionado/file/#{@file.id}")
+      #Dir.rmdir("#{Rail.root}"+"/public/uploads/fichero_gestionado/file/#{@file.id}")
       flash[:notice]="Archivo Eliminado"
     else
       flash[:warning]="No se pudo eliminar el archivo, vuelva a intentarlo"
