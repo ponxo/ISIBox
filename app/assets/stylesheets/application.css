@@ -77,7 +77,6 @@ html, body {
   height: 3em;
   font-size:1em;
   float:right;
-  border:2px solid black;
 }
 
 table#files {
@@ -88,9 +87,9 @@ table#files {
   border-bottom: 2px solid black;
 }
 table#files th {
-  border: 2px solid white;
+  border: 2px solid blue;
   font-weight: bold;
-  background-color: wheat;
+  background-color:yellow ;
   padding: 4px;
   text-align:left;
 }
@@ -101,9 +100,14 @@ table#files td:hover{
   background:yellow;
 }
 
-#notice, #warning {
+#pie{
   clear:both;
+}
+#notice, #warning {
+  clear:both;  
+  width:20%;
   background: yellow;
+  color: red;
   padding: 4px;
 }
 #imagen{
@@ -117,5 +121,8 @@ table#files td:hover{
 #bienvenida{
   width: 20%;
   margin-left:40%;
+}
+#upload{
+  clear:both;
 }
   

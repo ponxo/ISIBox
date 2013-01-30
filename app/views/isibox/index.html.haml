@@ -10,30 +10,31 @@
 - elsif flash[:warning]
   #warning.message= flash[:warning]
 
-%table#files
-  %thead
-    %tr
-      %th
-      %th Index
-      %th Nombre Fichero
-      %th Tipo
-  %tbody
-    - @files.each_with_index do |file,index|
+-if @contador > 0
+  %table#files
+    %thead
       %tr
-        - index= index + 1
-        %td 
-          - @icono="#{file.content_type}"+".png"
-          = image_tag("#{@icono}")
-        %td= index
-        %td= file.name 
-        %td= file.content_type
-        %td= link_to "Abrir Online", isibox_path(file.id), :method => :get
-        %td= link_to "Descargar Fichero", "download/#{file.id}"
-        %td= button_to 'Delete', isibox_path(file.id), :method => :delete, :confirm => '¿Estás seguro de eliminar el fichero?'
+        %th
+        %th Index
+        %th Nombre Fichero
+        %th Tipo
+    %tbody
+      - @files.each_with_index do |file,index|
+        %tr
+          - index= index + 1
+          %td 
+            - @icono="#{file.content_type}"+".png"
+            = image_tag("#{@icono}")
+          %td= index
+          %td= file.name 
+          %td= file.content_type
+          %td= link_to "Abrir Online", isibox_path(file.id), :method => :get
+          %td= link_to "Descargar Fichero", "download/#{file.id}"
+          %td= button_to 'Delete', isibox_path(file.id), :method => :delete, :confirm => '¿Estás seguro de eliminar el fichero?'
 
-=link_to 'Subir Fichero', new_isibox_path
 
-
-=link_to 'Cerrar Sesion', logout_path
-%br
-=link_to 'Eliminar Cuenta', "delete/user/#{@usuario.id}", :confirm => '¿Seguro que quieres eliminar la cuenta?'
+#pie
+  =link_to 'Subir Fichero', new_isibox_path
+  =link_to 'Cerrar Sesion', logout_path
+  %br
+  =link_to 'Eliminar Cuenta', "delete/user/#{@usuario.id}", :confirm => '¿Seguro que quieres eliminar la cuenta?'

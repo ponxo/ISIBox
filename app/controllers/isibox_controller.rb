@@ -2,6 +2,11 @@ class IsiboxController < ApplicationController
   def index
     @usuario=Usuario.find_by_nick(session[:usuario])
     @files=@usuario.fichero_gestionados
+    @contador=0
+    @files.each do |file|
+      @contador=@contador+1
+    end
+    puts @contador
     
   end
 

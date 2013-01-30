@@ -1,20 +1,26 @@
+.cabecera
+  .icono 
+    =image_tag("icono.png")
+  %p ISIBox
 - if flash[:notice]
   #notice.message= flash[:notice]
 - elsif flash[:warning]
   #warning.message= flash[:warning]
 
-= form_tag isibox_index_path, :multipart => true do
+#upload
+  = form_tag isibox_index_path, :multipart => true do
 
-  = label :fichero, :name, 'Nombre Fichero'
-  = text_field :fichero, 'name'
+    = label :fichero, :name, 'Nombre Fichero'
+    = text_field :fichero, 'name'
 
-  = label :fichero, :content_type, 'Contenido'
-  = select :fichero, :content_type, ['Audio', 'Imagen', 'Txt','Video','Pdf']
+    = label :fichero, :content_type, 'Contenido'
+    = select :fichero, :content_type, ['Audio', 'Imagen', 'Txt','Video','Pdf']
   
-  = label :fichero, :file , 'Archivo'
-  = file_field :fichero, 'file'
+    = label :fichero, :file , 'Archivo'
+    = file_field :fichero, 'file'
 
-  = submit_tag "Adjuntar Fichero"
+    = submit_tag "Adjuntar Fichero"
 
 
-
+.return
+  =link_to= link_to "Volver página principal", isibox_index_path
